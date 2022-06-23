@@ -1,7 +1,6 @@
 from django.apps import apps
 from django.conf import settings
 from django.test import SimpleTestCase
-
 from testapp.models import Photo
 
 
@@ -10,4 +9,4 @@ class TestSetup(SimpleTestCase):
         self.assertIn("content_disposition", settings.INSTALLED_APPS)
 
     def test_models(self):
-        self.assertIs(apps.get_model('testapp', 'Photo'), Photo)
+        self.assertIs(apps.get_model("testapp", "Photo"), Photo)

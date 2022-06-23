@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 
 from content_disposition.content_disposition import rfc5987_content_disposition
+
 from .models import Photo
 from .serializers import PhotoSerializer
 
@@ -29,6 +30,8 @@ class PhotoViewSet(viewsets.ModelViewSet):
             open(instance.file.path, "rb").read(),
             content_type=instance.mime,
         )
-        response["Content-Disposition"] = rfc5987_content_disposition(instance.file.name)
+        response["Content-Disposition"] = rfc5987_content_disposition(
+            instance.file.name
+        )
 
         return response

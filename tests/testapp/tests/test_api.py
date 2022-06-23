@@ -3,7 +3,6 @@ import os
 from django.core.files import File
 from django.test import TestCase
 from rest_framework.status import HTTP_200_OK
-
 from testapp.models import Photo
 
 
@@ -22,12 +21,12 @@ class TestApi(TestCase):
             self.photo.file.save("TestA.jpg", file)
 
     def test_download(self):
-        """ Assert the resulting FileResponse contains the expected Content-Disposition """
+        """Assert the resulting FileResponse contains the expected Content-Disposition"""
         response = self.client.get(path=f"/api/photo/{self.photo.pk}/download/")
         self.assertEqual(HTTP_200_OK, response.status_code)
 
         # check response
         self.assertEqual(
             f'inline; filename="{self.photo.file.name}"',
-            response.get("Content-Disposition")
+            response.get("Content-Disposition"),
         )

@@ -1,5 +1,9 @@
 # Content Disposition
 
+[![PyPI version](https://img.shields.io/pypi/v/content-disposition.svg)](https://pypi.org/project/content-disposition/)
+[![Run linter and tests](https://github.com/anexia/python-content-disposition/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/anexia/python-content-disposition/actions/workflows/test.yml)
+[![Codecov](https://img.shields.io/codecov/c/gh/anexia/python-content-disposition)](https://codecov.io/gh/anexia/python-content-disposition)
+
 A library that allows easy management of 'Content-Disposition' details of HTTP responses.
 
 So far it provides:

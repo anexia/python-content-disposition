@@ -7,16 +7,25 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Photo',
+            name="Photo",
             fields=[
-                ('name', models.CharField(max_length=50, primary_key=True, serialize=False)),
-                ('file', models.FileField(max_length=255, upload_to='photos/uploads/bb50c426-eca1-11ec-b3a2-f7680d273bc6', verbose_name='file')),
-                ('mime', models.CharField(max_length=256, verbose_name='mime')),
+                (
+                    "name",
+                    models.CharField(max_length=50, primary_key=True, serialize=False),
+                ),
+                (
+                    "file",
+                    models.FileField(
+                        max_length=255,
+                        upload_to="photos/uploads/bb50c426-eca1-11ec-b3a2-f7680d273bc6",
+                        verbose_name="file",
+                    ),
+                ),
+                ("mime", models.CharField(max_length=256, verbose_name="mime")),
             ],
         ),
     ]

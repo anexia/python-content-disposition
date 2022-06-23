@@ -8,6 +8,7 @@ class Photo(models.Model):
     """
     Public info without IP restrictions.
     """
+
     name = models.CharField(max_length=50, primary_key=True)
     file = models.FileField(
         max_length=255,
