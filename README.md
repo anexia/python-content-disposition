@@ -14,7 +14,7 @@ So far it provides:
 1. Install using pip:
 
 ```
-pip install git+https://github.com/anexia-it/content-disposition@main
+pip install content-disposition
 ```
 
 2. Add the library to your INSTALLED_APPS list.
