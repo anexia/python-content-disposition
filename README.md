@@ -17,16 +17,6 @@ So far it provides:
 pip install content-disposition
 ```
 
-2. Add the library to your INSTALLED_APPS list.
-
-```
-INSTALLED_APPS = [
-    ...
-    'content_disposition',
-    ...
-]
-```
-
 ## Usage
 
 Use the rfc5987_content_disposition function to set an HTTP response's 'Content-Type' field in any endpoint, e.g.:
