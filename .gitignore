@@ -3,3 +3,4 @@
 __pycache__
 db.sqlite3
 tests/photos/uploads
+.DS_Store

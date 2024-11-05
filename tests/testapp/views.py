@@ -30,6 +30,8 @@ class PhotoViewSet(viewsets.ModelViewSet):
             open(instance.file.path, "rb").read(),
             content_type=instance.mime,
         )
-        response["Content-Disposition"] = rfc5987_content_disposition(instance.file.name)
+        response["Content-Disposition"] = rfc5987_content_disposition(
+            instance.file.name,
+        )
 
         return response

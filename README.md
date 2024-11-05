@@ -31,7 +31,7 @@ from content_disposition import rfc5987_content_disposition
 
 class MyViewSet(viewsets.ModelViewSet):
     ...
-    
+
     @action(
         detail=True,
         methods="get",
@@ -39,7 +39,7 @@ class MyViewSet(viewsets.ModelViewSet):
     )
     def download_route(self, request, pk=None):
         """
-        Assuming that self.get_object() returns a model defining 
+        Assuming that self.get_object() returns a model defining
         'name = models.CharField(...)', 'file = models.FileField(...)' and 'mime = models.CharField(...)'
         whereas 'mime' represents the correct mime_type related to 'file'
         """

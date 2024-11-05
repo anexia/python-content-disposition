@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import unicodedata
 from urllib.parse import quote
 
@@ -15,10 +14,12 @@ def rfc5987_content_disposition(file_name, disposition_type="inline"):
     :param disposition_type: str
     :return:
     """
-    ascii_name = unicodedata.normalize("NFKD", file_name).encode("ascii", "ignore").decode()
-    header = '{}; filename="{}"'.format(disposition_type, ascii_name)
+    ascii_name = (
+        unicodedata.normalize("NFKD", file_name).encode("ascii", "ignore").decode()
+    )
+    header = f'{disposition_type}; filename="{ascii_name}"'
     if ascii_name != file_name:
         quoted_name = quote(file_name)
-        header += "; filename*=UTF-8''{}".format(quoted_name)
+        header += f"; filename*=UTF-8''{quoted_name}"
 
     return header
